@@ -1,0 +1,89 @@
+#include <SoftwareSerial.h>
+#include <LiquidCrystal.h>  
+LiquidCrystal lcd(1, 2, 4, 5, 6, 7); 
+SoftwareSerial mySerial(3, 11);
+int pirsensor = 10;
+int buzzer = 12;
+int redled = 13;
+const int trigPin = 9;
+const int echoPin = 8;
+long duration;
+int distance;
+int percentage;
+void setup() {
+lcd.begin(16,2);
+pinMode(trigPin, OUTPUT);
+pinMode(echoPin, INPUT); 
+Serial.begin(9600);
+randomSeed(analogRead(0));
+  Serial.begin(9600);
+ mySerial.begin(9600); 
+  pinMode(pirsensor, INPUT);
+  pinMode(buzzer, OUTPUT);
+  pinMode(redled, OUTPUT);
+digitalWrite(buzzer, LOW);
+digitalWrite(redled, LOW);
+  delay(100);   
+}
+void loop() {
+digitalWrite(trigPin, LOW);
+delayMicroseconds(2);
+digitalWrite(trigPin, HIGH);
+delayMicroseconds(10);
+digitalWrite(trigPin, LOW);
+duration = pulseIn(echoPin, HIGH);
+distance= duration*0.034/2;
+Serial.println(distance);
+percentage = (distance/original depth of dustbin)*100;
+lcd.print(percentage,"__filled");  
+ delay(300);
+if percentage>=90 {
+  lcd.clear();
+  lcd.print("Out of service")
+  SIM900.print("AT+CMGF=1\r"); 
+  delay(100);
+  SIM900.println("AT+CMGS=\"+91\""); 
+  delay(100);
+  SIM900.println("Smart Dustbin no. 001 is full please collect garbage"); 
+  delay(100);
+  SIM900.println((char)26); 
+  delay(100);
+  SIM900.println();
+  delay(5000); 
+  if ( digitalRead(pirsensor) == HIGH) 
+  { digitalWrite(buzzer, HIGH);
+    digitalWrite(redled, HIGH);
+   Serial.println("making call");
+   
+    mySerial.println("AT"); 
+  updateSerial();
+  
+  mySerial.println("ATD+ +7879118433;"); 
+  updateSerial();
+  delay(20000); 
+  mySerial.println("ATH");
+  updateSerial();
+
+   delay(2000);
+  }
+  if ( digitalRead(pirsensor) == LOW) 
+  {
+    digitalWrite(buzzer, LOW);
+    digitalWrite(redled, LOW);
+   ;
+    delay(1000);
+  }
+}
+}
+void updateSerial()
+{
+  delay(500);
+  while (Serial.available()) 
+  {
+    mySerial.write(Serial.read());
+  }
+  while(mySerial.available()) 
+  {
+    Serial.write(mySerial.read());
+  }
+}
