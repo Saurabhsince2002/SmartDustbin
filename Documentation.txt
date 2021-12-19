@@ -1,0 +1,76 @@
+Problem statement:
+•	There is a huge mismanagement in collecting garbage from public dustbins in many area of India.
+        The garbage is going to be lying in already full dustbins and will eventually end up burning by the locals.
+•	Incinerating garbage emits harmful gases,bad odor and dust (particulate matter), which contribute to global warming and damage lakes, forests, oceans, and towns half a world away from their source. 
+•	Urban India generates 62 million tonnes of waste (MSW) annually, and it has been predicted that this will reach 165 million tonnes in 2030.
+        43 million tonnes of municipal solid waste is collected annually, out of which 31 million is dumped in landfill sites and just 11.9 million is treated. 
+•	There are just not enough public bins, and the ones that are accessible aren't even covered, so rubbish frequently overflows and ends up all over the streets.
+        In many situations, waste collecting vehicles are not even covered, resulting in trash on the streets. In India, many citizens litter the streets as well.
+•	Overflowing garbage bins and suggest how modern technology could ease the problems by increasing the efficiency of waste collections and informing the waste handlers before the bins overflow.
+1.	Bacteria, insects and vermin thrive from garbage
+2.	Overflowing waste causes air pollution and respiratory diseases
+3.	Garbage contaminates surface waters, which affects all ecosystems
+4.	Direct handling of overflowing waste exposes for health risks
+5.	Inefficient waste control is bad for municipal wellbeing
+  As a believer of technology, we would like to solve this problem of waste management and disposal using a smart dustbin built with modern and technologies.
+
+
+Requirements :
+Hardware required:
+1.Arduino Uno R3
+2.HC-SR04 Ultrasonic sensor
+3.D1286464 Rsi 16X2 Display
+4.SIM900a GSM module
+5.li-ion battery
+
+Software required:
+to program arduino board we only need Arduino open source compiler.
+
+Technologies used:
+1.SONAR (Sound Navigation and Ranging) 
+2.GSM technology
+3.GPS (Global Positioning System)
+4.Solar energy
+
+
+Project Description:
+When the dustbin is empty is shows 0% filled.
+The ultrasonic sensor constantly keep an eye on the level of the garbage in the dustbin
+and shows constantly how many percentage the dustbin is filled.
+when the level of garbage reachs above 90% i.e. the dustbin is about to be full 
+the dustbin automatically send a message saying "Smart Dustbin no. 00xx is full,
+please collect garbage" along with a link of google maps containing exact location 
+of the dustbin. 
+The message is send to the person responsible to collect garbage 
+from that locality.
+The dustbin also calls the same person , an automated voice tells the person to
+collect the garbage and also mentions the location of the dustbin.
+While the dustbin is not emptied , it shows "OUT OF SERVICE".
+Now if the dustbin is not emptied in the specific time given for the task, says 24 hours
+then the dustbin automatically send a complaint of the person on duty to collect garbage
+to the nagar nigam office.This feature is crucial for making sure the whole system is
+working optimally.
+
+
+Scope:
+Market scope is huge as  Thousands of Smart dustbins are needed.
+No similar solutions exist.
+It’s a fairly unique approach.
+Proposing this idea to the Government is way to go.
+It is scalable in the market dependencies.
+Its going to be in demand for long time ahead so it is sustainable.
+The government can buy the dustbins directly , thus generating revenue while it is a MVP.
+
+
+Challenges faced:
+The biggest challenge was integrating all the existing technologies to make them work
+together and as expected. Many errors arouse during the development of the project, but 
+they were one way or other rectified.
+Some problems occured during the testing phase which were solved too.
+
+Conclusion:
+If Smart dustbin is used on a big scale it can help solve not only waste management 
+problems but also environment problems.
+by result of which we  would not face public dustbin overflow issues ever.
+Our Smart dustbin also prevents hazardous fumes and carcinogenic diseases to affect 
+public in urban environment.
